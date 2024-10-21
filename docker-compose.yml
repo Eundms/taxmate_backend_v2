@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  database:
+    image: postgres:latest
+    container_name: postgres-container
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: eundms
+      TZ: Asia/Seoul
+    ports:
+      - 5432:5432

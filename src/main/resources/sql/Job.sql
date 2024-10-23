@@ -1,0 +1,12 @@
+-- Job Description
+CREATE SEQUENCE JOB_DESCRIPTION_SEQ START WITH 1 INCREMENT BY 1;
+
+CREATE TABLE JOB_DESCRIPTION (
+    id BIGINT PRIMARY KEY DEFAULT nextval("JOB_DESCRIPTION_SEQ"),
+    world_id BIGINT,
+    name VARCHAR(50),
+    description varchar(255),
+    salary INTEGER,
+    type VARCHAR(10) CHECK (type IN ('PART', 'FULL')),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
